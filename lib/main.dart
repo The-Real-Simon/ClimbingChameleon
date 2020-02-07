@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'resources/views/layouts/app.dart';
+
 void main() => runApp(ClimbingChameleon());
 
 class ClimbingChameleon extends StatelessWidget {
@@ -12,38 +14,7 @@ class ClimbingChameleon extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Climbing Chameleon'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Climbing Chameleon',
-            ),
-          ],
-        ),
-      ),
+      home: AppLayout(title: 'Climbing Chameleon'),
     );
   }
 }
