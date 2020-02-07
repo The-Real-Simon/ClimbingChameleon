@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:climbing_chameleon/resources/views/layouts/navbar.dart';
+import 'package:climbing_chameleon/resources/views/dashboard.dart';
 
 class AppLayout extends StatefulWidget {
   AppLayout({Key key, this.title}) : super(key: key);
@@ -14,17 +16,16 @@ class _AppLayoutState extends State<AppLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Climbing Chameleon',
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.only( top: 24),
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          child: Column(
+            children: <Widget>[
+              Navbar( navbarTitle: widget.title, ),
+              Dashboard(),
+            ],
+          ),
         ),
       ),
     );
